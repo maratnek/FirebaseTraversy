@@ -17,8 +17,6 @@ export class NavbarComponent implements OnInit {
     public flashMessage: FlashMessagesService
   ) {
     this.user = af.authState;
-    console.log(af.auth);
-    console.log(this.user);
   }
 
   ngOnInit() {
@@ -27,10 +25,12 @@ export class NavbarComponent implements OnInit {
   login(){
       this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       // this.af.auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
+      this.flashMessage.show('You are logged out',{cssClass:'alert-success',timeout:3000});
   }
 
   logout(){
     this.af.auth.signOut();
+    this.flashMessage.show('You are logged out',{cssClass:'alert-success',timeout:3000});
   }
 
 }

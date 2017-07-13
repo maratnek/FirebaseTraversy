@@ -3,8 +3,8 @@
       <h1>Property Listings</h1>
       <p>Access the hottest properties available.</p>
       <ul class="">
-        <li class="input-field"><a class="btn red" [routerLink]="['/']"><fa [name]="'google-plus'"></fa>Sign In Google</a></li>
-        <li class="input-field"><a class="btn black" [routerLink]="['/']"><fa [name]="'github'"></fa> Sign In Google</a></li>
+        <li class="input-field"><a (click)='login()' class="btn red" [routerLink]="['/']"><fa [name]="'google-plus'"></fa>Sign In Google</a></li>
+        <li class="input-field"><a (click)='login()' class="btn black" [routerLink]="['/']"><fa [name]="'github'"></fa> Sign In Google</a></li>
       </ul>
   </div>
 </div>

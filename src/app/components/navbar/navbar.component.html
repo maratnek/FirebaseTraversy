@@ -4,8 +4,8 @@
     <a materialize="sideNav" href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="hide-on-med-and-down">
       <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['/listings']">Listings</a></li>
-      <li><a [routerLink]="['/add-listing']">Add Listing</a></li>
+      <li><a *ngIf="(this.user| async)" [routerLink]="['/listings']">Listings</a></li>
+      <li><a *ngIf="(this.user| async)" [routerLink]="['/add-listing']">Add Listing</a></li>
     </ul>
     <ul class="right hide-on-med-and-down">
       <li><a *ngIf="!(this.user| async)"  (click)="login()">Login</a></li>

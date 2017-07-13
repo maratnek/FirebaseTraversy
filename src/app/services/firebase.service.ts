@@ -15,6 +15,12 @@ export class FirebaseService {
     return this.listings;
   }
 
+  getListingDetails(id){
+    // this.listings = this.db.list('/li')
+    console.log(this.listings);
+    return this.listings;
+  }
+
 }
 
 interface Listing {

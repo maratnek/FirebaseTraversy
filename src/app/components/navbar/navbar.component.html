@@ -5,16 +5,18 @@
     <ul class="hide-on-med-and-down">
       <li><a [routerLink]="['/']">Home</a></li>
       <li><a [routerLink]="['/listings']">Listings</a></li>
+      <li><a [routerLink]="['/add-listing']">Add Listing</a></li>
     </ul>
     <ul class="right hide-on-med-and-down">
-      <li><a (click)="login()">Login</a></li>
-      <li><a (click)="logout()">Logout</a></li>
+      <li><a *ngIf="!(this.user| async)"  (click)="login()">Login</a></li>
+      <li><a *ngIf="(this.user| async)"  (click)="logout()">Logout</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['/listings']">Listings</a></li>
-      <li><a (click)="login()">Login</a></li>
-      <li><a (click)="logout()">Logout</a></li>
+      <li><a *ngIf="(this.user| async)"  [routerLink]="['/listings']">Listings</a></li>
+      <li><a *ngIf="(this.user| async)"  [routerLink]="['/add-listing']">Add Listing</a></li>
+      <li><a *ngIf="!(this.user | async)"  class="teal lighten-2" (click)="login()">Login</a></li>
+      <li><a *ngIf="(this.user | async)" class="teal lighten-2" (click)="logout()">Logout</a></li>
     </ul>
   </div>
 </nav>

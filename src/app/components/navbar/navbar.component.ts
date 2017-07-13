@@ -3,6 +3,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,12 @@ import * as firebase from 'firebase/app';
 export class NavbarComponent implements OnInit {
   user : Observable<firebase.User>;
   // provider: enum{ google, github };
-  constructor(public af: AngularFireAuth) {
+  constructor(public af: AngularFireAuth,
+    public flashMessage: FlashMessagesService
+  ) {
     this.user = af.authState;
+    console.log(af.auth);
+    console.log(this.user);
   }
 
   ngOnInit() {

@@ -22,12 +22,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 const firebaseAuthConfig = {
 };
 
 const appRoutes: Routes = [
   {path:'', component:HomeComponent},
   {path:'listings', component:ListingsComponent},
+  {path:'listing/:id', component:ListingComponent},
   {path:'add-listing', component:AddListingComponent}
 ]
 
@@ -50,7 +53,8 @@ const appRoutes: Routes = [
     Angular2FontawesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

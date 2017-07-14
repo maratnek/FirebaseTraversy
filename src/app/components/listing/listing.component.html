@@ -1,3 +1,23 @@
-<p>
-  listing works!
-</p>
+<div class="" *ngIf="listing">
+  <br>
+  <a class=btn [routerLink]="['/listings']"><i class="large left  material-icons">undo</i> Go Back</a>
+  <br>
+  <h2 class="">{{listing.title}} <small>{{listing.city}}</small></h2>
+  <div class="row">
+    <div class="col m4">
+
+    </div>
+    <div class="col m8">
+      <div class="collection">
+        <div class="collection-item">Owner: {{listing.owner}}</div>
+        <div class="collection-item">Bedrooms: {{listing.bedrooms}}</div>
+        <div class="collection-item">Type: {{listing.type}}</div>
+        <div class="collection-item">Price: {{listing.price}}</div>
+      </div>
+      <a  class="waves-effect waves-light btn black">Edit <i class="large right material-icons">mode_edit</i></a>
+      <a  class="waves-effect waves-light btn red">Delete <i class="large right material-icons">delete</i></a>
+    </div>
+
+  </div>
+
+</div>

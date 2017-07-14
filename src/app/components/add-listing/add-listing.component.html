@@ -1,3 +1,43 @@
-<p>
-  add-listing works!
-</p>
+<br>
+<a [routerLink]="['/listings']">Back</a>
+<br>
+  <div class="row">
+    <form class="col s12" (submit)="onAddSubmit()">
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="title">Title</label>
+          <input id="title" type="text" name="title" [(ngModel)]="title" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label for="city">City</label>
+          <input id="city" type="text" name="city" class="validate" [(ngModel)]="city">
+        </div>
+        <div class="input-field col s6">
+          <label for="owner">Owner</label>
+          <input id="city" type="text" name="owner" class="validate" [(ngModel)]="owner">
+        </div>
+        <div class="input-field col s6">
+          <label for="bedrooms">Bedrooms</label>
+          <input id="bedrooms" type="text" name="bedrooms" class="validate" [(ngModel)]="bedrooms">
+        </div>
+        <div class="input-field col s6">
+          <select materialize="material_select" [(ngModel)]="type" name="type">
+            <option value="" disabled selected>Choose your type</option>
+            <option value="Estate">Estate</option>
+            <option value="Condo">Condo</option>
+            <option value="Apartment">Apartment</option>
+          </select>
+          <label for="type">Type</label>
+        </div>
+      </div>
+      <div class="file-field input-field col s6">
+        <div class="btn">
+          <span>File</span>
+          <input type="file" multiple [(ngModel)]="image" name="image">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files" [(ngModel)]="image" name="image">
+        </div>
+      </div>
+    </form>
+  </div>

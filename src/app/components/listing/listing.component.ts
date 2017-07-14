@@ -22,6 +22,7 @@ export class ListingComponent implements OnInit {
     // GetId
     this.id = this.route.snapshot.params['id'];
     this.firebaseService.getListingDetails(this.id).subscribe(listing => {
+      console.log(listing);
       this.listing = listing;
 
       //@TODO - Storage Ref

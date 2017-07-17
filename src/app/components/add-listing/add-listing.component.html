@@ -6,22 +6,22 @@
       <div class="row">
         <div class="input-field col s6">
           <label for="title">Title</label>
-          <input id="title" type="text" name="title" [(ngModel)]="title" class="validate">
+          <input id="title" type="text" name="title" [(ngModel)]="title" class="validate" required>
         </div>
         <div class="input-field col s6">
           <label for="city">City</label>
-          <input id="city" type="text" name="city" class="validate" [(ngModel)]="city">
+          <input id="city" type="text" name="city" class="validate" [(ngModel)]="city" required>
         </div>
         <div class="input-field col s6">
           <label for="owner">Owner</label>
-          <input id="city" type="text" name="owner" class="validate" [(ngModel)]="owner">
+          <input id="owner" type="text" name="owner" class="validate" [(ngModel)]="owner" required>
         </div>
         <div class="input-field col s6">
           <label for="bedrooms">Bedrooms</label>
-          <input id="bedrooms" type="text" name="bedrooms" class="validate" [(ngModel)]="bedrooms">
+          <input id="bedrooms" type="text" name="bedrooms" class="validate" [(ngModel)]="bedrooms" required>
         </div>
         <div class="input-field col s6">
-          <select materialize="material_select" [(ngModel)]="type" name="type">
+          <select materialize="material_select" [(ngModel)]="type" name="type" required>
             <option value="" disabled selected>Choose your type</option>
             <option value="Estate">Estate</option>
             <option value="Condo">Condo</option>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="file-field input-field col s6">
-        <div class="btn">
+        <div class="btn row">
           <span>File</span>
           <input type="file" multiple [(ngModel)]="image" name="image">
         </div>
@@ -39,5 +39,10 @@
           <input class="file-path validate" type="text" placeholder="Upload one or more files" [(ngModel)]="image" name="image">
         </div>
       </div>
+      <div class="input-field col s6">
+        <label for="price">Price</label>
+        <input id="price" type="text" name="price" class="validate" [(ngModel)]="price" required>
+      </div>
+      <input type="submit" value="submit" class="btn">
     </form>
   </div>

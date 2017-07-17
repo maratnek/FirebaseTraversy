@@ -2,26 +2,26 @@
 <a [routerLink]="['/listings']">Back</a>
 <br>
   <div class="row">
-    <form class="col s12" (submit)="onAddSubmit()">
+    <form class="col s12" (submit)="onAddSubmit()" materialize="">
       <div class="row">
         <div class="input-field col s6">
           <label for="title">Title</label>
-          <input id="title" type="text" name="title" [(ngModel)]="title" class="validate" required>
+          <input id="title" type="text" name="title" [(ngModel)]="title" class="validate" required="" aria-required="true">
         </div>
         <div class="input-field col s6">
           <label for="city">City</label>
-          <input id="city" type="text" name="city" class="validate" [(ngModel)]="city" required>
+          <input id="city" type="text" name="city" class="validate" [(ngModel)]="city" required="" aria-required="true">
         </div>
         <div class="input-field col s6">
           <label for="owner">Owner</label>
-          <input id="owner" type="text" name="owner" class="validate" [(ngModel)]="owner" required>
+          <input id="owner" type="text" name="owner" class="validate" [(ngModel)]="owner" required="" aria-required="true">
         </div>
         <div class="input-field col s6">
           <label for="bedrooms">Bedrooms</label>
-          <input id="bedrooms" type="text" name="bedrooms" class="validate" [(ngModel)]="bedrooms" required>
+          <input id="bedrooms" type="text" name="bedrooms" class="validate" [(ngModel)]="bedrooms" required="" aria-required="true">
         </div>
         <div class="input-field col s6">
-          <select materialize="material_select" [(ngModel)]="type" name="type" required>
+          <select materialize="material_select" [(ngModel)]="type" name="type" required="" aria-required="true">
             <option value="" disabled selected>Choose your type</option>
             <option value="Estate">Estate</option>
             <option value="Condo">Condo</option>

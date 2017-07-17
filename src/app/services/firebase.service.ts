@@ -36,7 +36,7 @@ export class FirebaseService {
       iRef.put(selectedFile).then((snapshot) => {
         listing.path = path;
         listing.image = selectedFile.name;
-        return this.listings.push();
+        return this.listings.push(listing);
       });
     }
   }

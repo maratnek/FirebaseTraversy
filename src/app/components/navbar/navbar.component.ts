@@ -13,7 +13,8 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 export class NavbarComponent implements OnInit {
   user : Observable<firebase.User>;
   // provider: enum{ google, github };
-  constructor(public af: AngularFireAuth,
+  constructor(
+    public af: AngularFireAuth,
     public flashMessage: FlashMessagesService
   ) {
     this.user = af.authState;

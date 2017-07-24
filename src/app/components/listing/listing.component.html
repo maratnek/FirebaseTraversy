@@ -15,8 +15,8 @@
         <div class="collection-item">Price: {{listing.price}}</div>
         <div class="collection-item">Url: {{listing.imageUrl}}</div>
       </div>
-      <a  class="waves-effect waves-light btn black">Edit <i class="large right material-icons">mode_edit</i></a>
-      <a  class="waves-effect waves-light btn red">Delete <i class="large right material-icons">delete</i></a>
+      <a  class="waves-effect waves-light btn black" [routerLink]="['/edit-listing/'+listing.$key]">Edit <i class="large right material-icons">mode_edit</i></a>
+      <a  class="waves-effect waves-light btn red" (click)='onDeleteListing()'>Delete <i class="large right material-icons">delete</i></a>
     </div>
 
   </div>

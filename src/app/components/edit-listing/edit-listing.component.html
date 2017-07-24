@@ -1,3 +1,48 @@
-<p>
-  edit-listing works!
-</p>
+<br>
+<a class=btn [routerLink]="['/listings']"><i class="large left  material-icons">undo</i> Go Back</a>
+<br>
+  <div class="row">
+    <form class="col s12" (submit)="onEditSubmit()" materialize="">
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="title" data-error="wrong" data-success="right">Title</label>
+          <input id="title" type="text" name="title" [(ngModel)]="title" class="validate" required="" aria-required="true">
+        </div>
+        <div class="input-field col s6">
+          <label for="city">City</label>
+          <input id="city" type="text" name="city" class="validate" [(ngModel)]="city" required="" aria-required="true">
+        </div>
+        <div class="input-field col s6">
+          <label for="owner">Owner</label>
+          <input id="owner" type="text" name="owner" class="validate" [(ngModel)]="owner" required="" aria-required="true">
+        </div>
+        <div class="input-field col s6">
+          <label for="bedrooms">Bedrooms</label>
+          <input id="bedrooms" type="text" name="bedrooms" class="validate" [(ngModel)]="bedrooms" required="" aria-required="true">
+        </div>
+        <div class="input-field col s6">
+          <select materialize="material_select" [(ngModel)]="type" name="type" required="" aria-required="true">
+            <option value="" disabled selected>Choose your type</option>
+            <option value="Estate">Estate</option>
+            <option value="Condo">Condo</option>
+            <option value="Apartment">Apartment</option>
+          </select>
+          <label for="type">Type</label>
+        </div>
+      </div>
+      <!-- <div class="file-field input-field col s6">
+        <div class="btn row">
+          <span>File</span>
+          <input id="image" type="file" multiple [(ngModel)]="image" name="image">
+        </div>
+        <div class="file-path-wrapper">
+          <input  id="" class="file-path validate" type="text" placeholder="Upload one or more files" [(ngModel)]="image" name="image">
+        </div>
+      </div> -->
+      <div class="input-field col s6">
+        <label for="price">Price</label>
+        <input id="price" type="text" name="price" class="validate" [(ngModel)]="price" required>
+      </div>
+      <input type="submit" value="submit" class="btn">
+    </form>
+  </div>

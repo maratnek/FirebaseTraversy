@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
 export class FirebaseService {
 
   listings: FirebaseListObservable<any[]>;
-  listing: FirebaseObjectObservable<any[]>;
+  listing: FirebaseObjectObservable<any>;
   folder:any;
 
   constructor(private db: AngularFireDatabase) {
@@ -27,6 +27,10 @@ export class FirebaseService {
     return this.listing;
   }
 
+  updateListing(id, listing){
+    return this.listings.update(id, listing);
+  }
+
   addListing(listing){
     // create root Ref
     console.log('Add Listing');
@@ -41,6 +45,9 @@ export class FirebaseService {
         return this.listings.push(listing);
       });
     }
+  }
+  deleteListing(id){
+      return this.listings.remove(id);
   }
 
 }

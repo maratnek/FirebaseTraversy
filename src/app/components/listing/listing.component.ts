@@ -38,4 +38,9 @@ export class ListingComponent implements OnInit {
     });
   }
 
+  onDeleteListing(){
+    this.firebaseService.deleteListing(this.id);
+    this.router.navigate(['/listings']);
+  }
+
 }
